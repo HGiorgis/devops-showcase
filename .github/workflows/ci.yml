@@ -4,20 +4,14 @@ on:
   push:
     branches: ["main", "master"]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
-
-env:
-  # Suppresses the Node 20 deprecation warning for a cleaner demo output
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   test-ui:
@@ -48,9 +42,6 @@ jobs:
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Automatically prompts GitHub to enable Pages for this repo!
-          enablement: true
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
