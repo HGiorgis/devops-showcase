@@ -24,9 +24,9 @@ jobs:
         run: |
           echo "Running automated UI checks..."
           if grep -q "DevOps" index.html; then
-            echo "✅ UI Test passed! Content is correct."
+            echo "UI Test passed! Content is correct."
           else
-            echo "❌ Validation failed! Core keyword not found."
+            echo "Validation failed! Core keyword not found."
             exit 1
           fi
 
